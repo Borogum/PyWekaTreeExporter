@@ -50,15 +50,15 @@ class Node(object):
     def __init__(self,n):
 
         self.n=n
-        self.depth=0 #or -1
+        self.depth=0
         self.level=None
         self.parent=None
         self.childs=[]
-        self.split_feature=None # Para abajo
+        self.split_feature=None
         self.split_operator=None
         self.split_value=None
         self.samples=0
-        self.value=None # sorted by calesses
+        self.value=None
         self.value_label=None
         self.rule=AllRule()
 
@@ -139,7 +139,7 @@ class TreeParser(object):
     def __get_file_info(self):
 
         ''' '''
-        classes=set() # .add()
+        classes=set()
         with open(self.__data_file,'r') as r:
             headers=r.__next__().split(';')
             for l in r:
@@ -320,12 +320,6 @@ class TreeExporter(object):
                     writer.write('V%d [ label="%s" fontsize="%s" ];\n' \
                     % (node.parent.n, node.split_feature,self.GRAPHVIZ_FEATURE_FONT_SIZE))
                     writer.write('%d -> V%d [dir=none];\n' % (node.parent.n, node.parent.n))
-                    #only once
-                    #writer.write('V%d -> %d [label="%s%s" fontsize="%s"];\n' % \
-                        #(node.parent.n, node.n,node.split_operator,node.split_value,self.GRAPHVIZ_FEATURE_FONT_SIZE)) # Posible redundant code
-                #else:
-                #    writer.write('V%d -> %d [label="%s%s" fontsize="%s"];\n' % \
-                #        (node.parent.n, node.n,node.split_operator,node.split_value,self.GRAPHVIZ_FEATURE_FONT_SIZE)) # Posible redundant code
                 writer.write('V%d -> %d [label="%s%s" fontsize="%s"];\n' % \
                       (node.parent.n, node.n,node.split_operator,node.split_value,self.GRAPHVIZ_FEATURE_FONT_SIZE))
             for i,child in enumerate(node.childs):
