@@ -15,7 +15,7 @@ Execute the python script
 python tree2graph.py tree.txt train.csv tree.gv
 ```
 
-Finally you can use dot util to transform graphviz file to a image file.
+Finally you can use dot util to transform graphviz file to a image file
 
 ```bash
   dot -q -Tpng tree.gv -o tree.png
