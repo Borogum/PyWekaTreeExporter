@@ -1,0 +1,18 @@
+=== Classifier model ===
+
+Scheme:   J48
+Relation: iris-weka.filters.unsupervised.attribute.ClassAssigner-Clast
+
+J48 pruned tree
+------------------
+
+petal_width <= 0.6: setosa (35.0)
+petal_width > 0.6
+|   petal_width <= 1.7
+|   |   petal_length <= 5.2: versicolor (31.0/1.0)
+|   |   petal_length > 5.2: virginica (2.0)
+|   petal_width > 1.7: virginica (31.0/1.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
