@@ -23,7 +23,7 @@ Finally you can use dot util to transform graphviz file to a image file
 for png file  or
 
 ```bash
-  dot -q -Tsvg tree.svg -o tree.svg
+  dot -q -Tsvg tree.gv -o tree.svg
 ```
 
 for svg file
